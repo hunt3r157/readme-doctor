@@ -40,10 +40,10 @@ npx readme-doctor check --fail-below 80
 
 # write missing sections (idempotent, adds markers)
 npx readme-doctor fix
-GitHub Action
-yaml
-Copy
-Edit
+```
+
+### GitHub Action
+```yaml
 name: README Doctor
 on: [push, pull_request]
 jobs:
@@ -52,12 +52,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npx readme-doctor check --fail-below 80
-Usage
-Run against the README in the current repo (defaults to README.md):
+```
 
-bash
-Copy
-Edit
+---
+
+## Usage
+Run against the README in the current repo (defaults to `README.md`):
+
+```bash
 # Basic check
 npx readme-doctor check
 
@@ -69,19 +71,19 @@ npx readme-doctor check --fail-below 90
 
 # Auto-append missing sections between markers (no overwrite)
 npx readme-doctor fix
-What gets added on fix:
+```
 
-Sections are appended between markers like:
-<!-- readme-doctor:start:SECTION --> … <!-- readme-doctor:end:SECTION -->
+What gets added on `fix`:
+- Sections are appended between markers like:  
+  `<!-- readme-doctor:start:SECTION --> … <!-- readme-doctor:end:SECTION -->`
+- Re-running `fix` won’t duplicate sections.
 
-Re-running fix won’t duplicate sections.
+---
 
-Configuration
-Create readme-doctor.config.json in the repo root (all fields optional):
+## Configuration
+Create `readme-doctor.config.json` in the repo root (all fields optional):
 
-json
-Copy
-Edit
+```json
 {
   "path": "README.md",
   "minScore": 80,
@@ -103,12 +105,14 @@ Edit
     "links": true
   }
 }
-CI
+```
+
+---
+
+## CI
 This repo includes a minimal CI workflow that runs the doctor on pushes/PRs:
 
-yaml
-Copy
-Edit
+```yaml
 name: readme-doctor CI
 on: [push, pull_request]
 jobs:
@@ -117,35 +121,44 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npx readme-doctor check --fail-below 80
-Tip: make this check Required on your protected branches.
+```
 
-Security
-See SECURITY.md for how to report vulnerabilities. No telemetry and no network calls: the CLI only reads your README and optional config.
+**Tip:** make this check **Required** on your protected branches.
 
-Contributing
-Contributions welcome! Please see CONTRIBUTING.md and follow the zero-dependency guideline (Node ≥ 18). If you add checks, document the scoring and include a template for fix.
+---
 
-License
+## Security
+See [SECURITY.md](SECURITY.md) for how to report vulnerabilities. No telemetry and no network calls: the CLI only reads your README and optional config.
+
+---
+
+## Contributing
+Contributions welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) and follow the zero-dependency guideline (Node ≥ 18). If you add checks, document the scoring and include a template for `fix`.
+
+---
+
+## License
 MIT © README Doctor contributors
 
-Roadmap
- Score badge endpoint (shields-style) to display README score
+---
 
- Link checker with per-section hints
+## Roadmap
+- [ ] Score badge endpoint (shields-style) to display README score
+- [ ] Link checker with per-section hints
+- [ ] Language-specific install snippets (npm/pip/brew/go)
+- [ ] Optional auto-generate ToC
 
- Language-specific install hints (npm/pip/brew/go)
+---
 
- Auto-generate TOC if missing (optional)
+## FAQ
+**Does it overwrite my README?**  
+No. `check` is read-only. `fix` appends curated sections at the end between markers and won’t duplicate content.
 
-FAQ
-Does it overwrite my README?
-No. check is read-only. fix appends curated sections at the end between markers and won’t duplicate content.
+**Can I disable sections?**  
+Yes—set `sections.<name>` to `false` in `readme-doctor.config.json`.
 
-Can I turn sections off?
-Yes—set sections.<name> to false in readme-doctor.config.json.
+**Why fail in CI?**  
+Docs are part of DX. A threshold prevents regressions and keeps repos adoption-ready.
 
-Why fail on CI?
-Docs are part of DX. Failing below a threshold prevents regressions and keeps repos adoption-ready.
-
-How do I add it to any repo quickly?
-Add the CI step above and run npx readme-doctor fix once locally to scaffold missing sections.
+**How do I add it quickly to any repo?**  
+Add the CI step above and run `npx readme-doctor fix` once locally to scaffold missing sections.
