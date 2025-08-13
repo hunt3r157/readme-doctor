@@ -1,0 +1,16 @@
+name: 'README Doctor'
+description: 'Lint and optionally enforce a minimum README score'
+inputs:
+  fail-below:
+    description: 'Minimum score to pass (0-100)'
+    required: false
+    default: '80'
+  path:
+    description: 'README path'
+    required: false
+    default: 'README.md'
+runs:
+  using: 'composite'
+  steps:
+    - shell: bash
+      run: npx readme-doctor check --path "${{ inputs.path }}" --fail-below "${{ inputs.fail-below }}"

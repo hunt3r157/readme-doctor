@@ -1,0 +1,40 @@
+{
+  "name": "readme-doctor",
+  "version": "0.1.0",
+  "description": "Lint + auto-fix your README to make repos enterprise-ready. CLI + GitHub Action.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "readme-doctor": "bin/readme-doctor.mjs"
+  },
+  "files": [
+    "bin",
+    "templates",
+    "LICENSE",
+    "README.md",
+    ".github/actions/readme-doctor/action.yml"
+  ],
+  "keywords": [
+    "readme",
+    "linter",
+    "docs",
+    "github-actions",
+    "devrel",
+    "oss"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/readme-doctor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/readme-doctor/issues"
+  },
+  "homepage": "https://github.com/your-username/readme-doctor#readme",
+  "scripts": {
+    "doctor:check": "node bin/readme-doctor.mjs check",
+    "doctor:fix": "node bin/readme-doctor.mjs fix"
+  }
+}
