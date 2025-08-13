@@ -1,6 +1,6 @@
 {
   "name": "readme-doctor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lint + auto-fix your README to make repos enterprise-ready. CLI + GitHub Action.",
   "license": "MIT",
   "type": "module",
