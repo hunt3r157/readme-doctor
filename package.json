@@ -27,12 +27,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/readme-doctor.git"
+    "url": "git+https://github.com/hunt3r157/readme-doctor.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/readme-doctor/issues"
+    "url": "https://github.com/hunt3r157/readme-doctor/issues"
   },
-  "homepage": "https://github.com/your-username/readme-doctor#readme",
+  "homepage": "https://github.com/hunt3r157/readme-doctor#readme",
   "scripts": {
     "doctor:check": "node bin/readme-doctor.mjs check",
     "doctor:fix": "node bin/readme-doctor.mjs fix"

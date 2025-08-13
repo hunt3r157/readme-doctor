@@ -2,8 +2,8 @@
 
 > Make your repo look **enterprise-ready** in minutes. A tiny CLI + GitHub Action that **lints and auto-fixes README.md**: badges, quick start, install one-liner, config, CI, security, license, and more.
 
-[![CI](https://img.shields.io/github/actions/workflow/status/<your-username>/readme-doctor/ci.yml?branch=main)](https://github.com/<your-username>/readme-doctor/actions)
-[![Release](https://img.shields.io/github/actions/workflow/status/<your-username>/readme-doctor/release.yml?label=release)](https://github.com/<your-username>/readme-doctor/actions)
+[![CI](https://img.shields.io/github/actions/workflow/status/hunt3r157/readme-doctor/ci.yml?branch=main)](https://github.com/hunt3r157/readme-doctor/actions)
+[![Release](https://img.shields.io/github/actions/workflow/status/hunt3r157/readme-doctor/release.yml?label=release)](https://github.com/hunt3r157/readme-doctor/actions)
 [![npm](https://img.shields.io/npm/v/readme-doctor.svg)](https://www.npmjs.com/package/readme-doctor)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
